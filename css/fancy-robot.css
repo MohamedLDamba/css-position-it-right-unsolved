@@ -1,38 +1,195 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
+}
+
 .robot-container {
+   position: fixed;
+   margin: auto;
+   left: 50%;
+   top: 50%;
+   display: flex;
+   flex-direction: row;
+   transform: translate(-50%, -50%);
+    gap: 8px;
+    flex-wrap: wrap;
+    width: 900px;
+    height: 600px;
 }
 
 .robot-face-shape {
+    position: relative;
+    font-size: 16px;
+    width: 400px;
+    height: 300px;
+    border: 10px solid rgb(255, 255, 255);
+    border-radius: 20%;
+    padding: 4px;
+    margin: auto;
+    order: 2;
+    background: #f46b45;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #eea849, #f46b45);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #eea849, #f46b45); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+display: flex
+;
+    flex-direction: row;
+    flex-wrap: wrap;
+    order: 2;
+
 }
 
 .robot-eye-left {
+    width: 30%;
+    height: 30%;
+  aspect-ratio: 1;
+  --o:calc(50%*tan(-22.5deg));
+  clip-path: polygon(
+    var(--o) 50%,
+    50% var(--o),
+    calc(100% - var(--o)) 50%,
+    50% calc(100% - var(--o))
+  );
+  background-image: url(https://picsum.photos/id/870/200/300?grayscale&blur=2);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top:20px;
+  bottom: 0;
+  left: 35px;
+  right: 0;
+  padding: 20px;
 }
 
 .robot-eye-right {
+     --c: 60px; /* control the curvature (works with percentage) */
+    height: 30%;
+  aspect-ratio: 3/2;
+  /* you can also update the 60%  */
+  mask: radial-gradient(60% var(--c) at bottom,#0000 calc(100% - 2px),#000);
+    background: #3B8686;
+  width: 30%;
+  position: absolute;
+  top:50px;
+  bottom:0;
+  left: 225px;
+  right: 0;
+  opacity: 0.5;
 }
 
+
 .robot-ear-left {
+    height: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: 
+   radial-gradient(25% 25% at 50% 25%,#000 24%,#fff 26% 99%,#0000 101%), 
+   radial-gradient(25% 25% at 50% 75%,#fff 24%,#000 26% 99%,#0000 101%), 
+   conic-gradient(#000 50%, #fff 0);
+  border: 1px solid;
+  position: relative;
+    top: 250px;
+  bottom:0;
+  left: 140px;
+  right: 0;
+  border-radius: 40%;
+  order: 1;
 }
 
 .robot-ear-right {
+  height: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: 
+   radial-gradient(25% 25% at 50% 25%,#000 24%,#fff 26% 99%,#0000 101%), 
+   radial-gradient(25% 25% at 50% 75%,#fff 24%,#000 26% 99%,#0000 101%), 
+   conic-gradient(#000 50%, #fff 0);
+  border: 1px solid;
+  position: relative;
+    top:250px;
+  bottom:0;
+  left: -140px;
+  right: 0;
+ border-radius: 40%;
+ order:3;
 }
 
 .robot-nose {
+     --s: 50px; /* control the shape (can be percentage) */
+
+  height: 90px;
+  aspect-ratio: 3/5;
+  clip-path: polygon(0 0,var(--s) 0,100% 50%,var(--s) 100%,0 100%,calc(100% - var(--s)) 50%);
+  background: #5E9FA3;
+    position: absolute;
+    top: 10%;;
+  bottom:0;
+  left: 0;
+  right: 0;
+  border-radius: 0;
+  width:80px;
+  margin: auto;
 }
 
 .robot-teeth {
+   height: 40px; 
+   border:4px solid rgb(233, 233, 233);
+    margin: auto;
+    position: absolute;
+    top: 250px;;
+  bottom:0;
+  left: 150px;
+  right: 0;
+  border-radius: 30%;
+  width:160px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  transform: translate(-50%, -50%);
 }
 
 .robot-tooth {
+    width: 25px;
+    height: 15px;
+    border:2px solid #fff;
+    border-radius: 30%;
+    background-color: yellow;
 }
 
 .robot-hair-style {
+     position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: row; 
+    height: 30px;
 }
 
 .robot-hair-one {
+height: 30px;
+  width: 30px;
+  background: #EDC951;
+  mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
+
+  
 }
 
 .robot-hair-two {
+     height: 30px;
+  width: 30px;
+  background: #EDC951;
+  mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
+
 }
 
 .robot-hair-three {
+     height: 30px;
+  width: 30px;
+  
+  background: #EDC951;
+  mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
+
 }
